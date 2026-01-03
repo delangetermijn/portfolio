@@ -2,8 +2,11 @@
   background: white;
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-  min-height: 100vh;
+  overflow: visible;
+  min-height: calc(100vh - 40px);
+  display: block;
+  position: relative;
+  z-index: 1;
 }
 
 .app-header {

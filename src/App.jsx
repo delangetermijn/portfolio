@@ -11,15 +11,6 @@ function App() {
   const [loading, setLoading] = useState(false)
   const [showAddForm, setShowAddForm] = useState(false)
 
-  useEffect(() => {
-    // Laad portfolio uit localStorage
-    const savedPortfolio = getPortfolioFromStorage()
-    if (savedPortfolio.length > 0) {
-      setPortfolio(savedPortfolio)
-      refreshPrices(savedPortfolio)
-    }
-  }, [])
-
   const refreshPrices = async (portfolioToUpdate = portfolio) => {
     if (portfolioToUpdate.length === 0) return
     
@@ -34,6 +25,16 @@ function App() {
       setLoading(false)
     }
   }
+
+  useEffect(() => {
+    // Laad portfolio uit localStorage
+    const savedPortfolio = getPortfolioFromStorage()
+    if (savedPortfolio.length > 0) {
+      setPortfolio(savedPortfolio)
+      refreshPrices(savedPortfolio)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const addToPortfolio = (item) => {
     const newPortfolio = [...portfolio, { ...item, id: Date.now() }]

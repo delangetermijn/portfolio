@@ -14,9 +14,18 @@ Een moderne web applicatie voor beleggers om hun aandelen- en cryptoportfolio bi
 
 ## Installatie
 
-```bash
-npm install
-```
+**BELANGRIJK:** Zorg eerst dat je Node.js geïnstalleerd hebt (versie 16 of hoger).
+
+1. Open een terminal/command prompt
+2. Navigeer naar de portfolio-tracker directory:
+   ```bash
+   cd portfolio-tracker
+   ```
+
+3. Installeer alle dependencies:
+   ```bash
+   npm install
+   ```
 
 ## Gebruik
 
@@ -26,7 +35,21 @@ Start de development server:
 npm run dev
 ```
 
+Je zou een bericht moeten zien zoals:
+```
+  VITE v5.x.x  ready in xxx ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+```
+
 Open je browser en ga naar `http://localhost:5173`
+
+**Als je een lege pagina ziet:**
+1. Controleer de browser console (F12) voor errors
+2. Zorg dat alle dependencies geïnstalleerd zijn (`npm install`)
+3. Zorg dat de dev server draait (`npm run dev`)
+4. Probeer de pagina te verversen (Ctrl+F5 of Cmd+Shift+R)
 
 ## Build voor productie
 

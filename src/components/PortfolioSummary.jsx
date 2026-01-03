@@ -13,7 +13,6 @@ function PortfolioSummary({ portfolio }) {
 
   return (
     <div className="portfolio-summary">
-      <h2>Portfolio Overzicht</h2>
       <div className="summary-stats">
         <div className="stat-card">
           <div className="stat-label">Totale Investering</div>
