@@ -11,6 +11,9 @@ function App() {
   const [loading, setLoading] = useState(false)
   const [showAddForm, setShowAddForm] = useState(false)
 
+  // Debug: log om te zien of component rendert
+  console.log('App component rendering', { portfolio: portfolio.length, loading, showAddForm })
+
   const refreshPrices = async (portfolioToUpdate = portfolio) => {
     if (portfolioToUpdate.length === 0) return
     
