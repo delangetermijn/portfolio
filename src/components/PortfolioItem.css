@@ -1,0 +1,144 @@
+.portfolio-item {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #667eea;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-item.profit {
+  border-left-color: #10b981;
+}
+
+.portfolio-item.loss {
+  border-left-color: #ef4444;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.item-symbol {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.item-type {
+  font-size: 1.5rem;
+}
+
+.symbol {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.item-actions button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 5px 8px;
+  border-radius: 5px;
+  transition: background 0.2s;
+}
+
+.item-actions button:hover {
+  background: #f0f0f0;
+}
+
+.save-btn {
+  color: #10b981;
+}
+
+.cancel-btn {
+  color: #ef4444;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.detail-row span:first-child {
+  color: #666;
+}
+
+.detail-row .value {
+  font-weight: 600;
+  color: #333;
+}
+
+.profit-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.profit-row.positive {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.profit-row.negative {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.edit-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.edit-field label {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.edit-field input {
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.edit-field input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+

@@ -1,0 +1,29 @@
+.portfolio-list {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-list h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.portfolio-list.empty {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.portfolio-list.empty p {
+  color: #888;
+  font-size: 1.1rem;
+}
+
+.portfolio-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
