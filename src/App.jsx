@@ -9,6 +9,7 @@ import './App.css'
 function App() {
   const [portfolio, setPortfolio] = useState([])
   const [loading, setLoading] = useState(false)
+  const [showAddForm, setShowAddForm] = useState(false)
 
   useEffect(() => {
     // Laad portfolio uit localStorage
@@ -59,24 +60,57 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1>📊 Portfolio Tracker</h1>
-        <p>Houd je aandelen en crypto bij</p>
+        <div className="logo-container">
+          <div className="text-logo">
+            <span className="logo-line-1">╔═══════════════════════════════╗</span>
+            <span className="logo-line-2">║   📊 PORTFOLIO TRACKER 📊   ║</span>
+            <span className="logo-line-3">╚═══════════════════════════════╝</span>
+          </div>
+        </div>
+        <div className="header-description">
+          <h2>Jouw Beleggingsportefeuille in Één Overzicht</h2>
+          <p>
+            Houd al je aandelen en cryptocurrency investeringen bij op één plek. 
+            Bekijk real-time prijzen, bereken je winst en verlies, en beheer je portfolio 
+            met gemak. Perfect voor zowel beginnende als ervaren beleggers.
+          </p>
+        </div>
       </header>
 
       <div className="app-content">
-        <div className="left-panel">
-          <PortfolioForm onAdd={addToPortfolio} />
-          <button 
-            className="refresh-button" 
-            onClick={() => refreshPrices()}
-            disabled={loading || portfolio.length === 0}
-          >
-            {loading ? 'Laden...' : '🔄 Ververs Prijzen'}
-          </button>
-        </div>
+        <div className="portfolio-overview-section">
+          <div className="overview-header">
+            <h2>Portfolio Overzicht</h2>
+            <div className="action-buttons">
+              <button 
+                className="action-btn primary"
+                onClick={() => setShowAddForm(!showAddForm)}
+              >
+                {showAddForm ? '✕ Annuleren' : '➕ Nieuw Item Toevoegen'}
+              </button>
+              <button 
+                className="action-btn secondary"
+                onClick={() => refreshPrices()}
+                disabled={loading || portfolio.length === 0}
+              >
+                {loading ? '⏳ Laden...' : '🔄 Prijzen Verversen'}
+              </button>
+            </div>
+          </div>
 
-        <div className="right-panel">
+          {showAddForm && (
+            <div className="form-container">
+              <PortfolioForm 
+                onAdd={(item) => {
+                  addToPortfolio(item)
+                  setShowAddForm(false)
+                }} 
+              />
+            </div>
+          )}
+
           <PortfolioSummary portfolio={portfolio} />
+
           <PortfolioList
             portfolio={portfolio}
             onRemove={removeFromPortfolio}
